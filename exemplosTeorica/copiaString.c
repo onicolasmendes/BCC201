@@ -14,6 +14,8 @@ int main(){
     printf("%s", mat1);
 
     getch();
+    
+
 
     return 0;
 }
