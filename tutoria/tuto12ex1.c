@@ -21,36 +21,55 @@ int main(int argc, char const *argv[])
             scanf("%d", &matriz[i][j]);
         }
     } 
-    int valida;
+   
+   int j=0, valida;
+   for(int i = 0; i < n; i++)
+   {   
+        if(matriz[i][j] != 0)
+        {
+           
+            int col = j;
+            for(int g = i+1; g < n; g++)
+            {
+                if(matriz[g][col] != 0)
+                {
+                    printf("N\n");
+                    return 0;
+                }
+                col++;
+            }
+        }
+        j++;   
+   }
+
+    int contzero=0;
     for(int i = 0; i < n; i++)
     {
         for(int j = 0; j < m; j++)
         {
-            if(matriz[i][j] == 0 && matriz[i][j+1] != 0)
+            if(matriz[i][j] == 0)
             {
-                for(int k = i +1; k < n; k++)
+                contzero++;
+            }
+        }
+        if (contzero == n)
+        {
+            for(int h = i +1; h < n; h++)
+            {
+                for(int w = 0; w < m; w++)
                 {
-                    for(int p = 0; p <= j; p++)
+                    if(matriz[h][w] != 0)
                     {
-                        if(matriz[k][p] != 0)
-                        {
-                            valida = 4;
-                            break;
-                            break;
-                            break;
-                            break;
-                        }
+                        printf("N\n");
+                        return 0;
                     }
                 }
             }
         }
-    } 
-
-    if(valida == 4)
-    {
-        printf("N\n");
     }
 
+    printf("S\n");
 
-    return 0;
+
+    return 0; 
 }
