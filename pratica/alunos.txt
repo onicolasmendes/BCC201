@@ -1,0 +1,8 @@
+3
+
+Nicolas 8.0 99
+
+Maria 6.0 54
+
+Joao 9.0 65
+
